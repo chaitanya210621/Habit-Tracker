@@ -1,0 +1,142 @@
+/* 🔥 Overall layout */
+.habit-tracker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #f0f4f8;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  /* 🔥 Input area */
+  .input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  .input-group input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  .input-group button {
+    padding: 12px 20px;
+    border: none;
+    background: #28a745;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .input-group button:hover {
+    background: #218838;
+  }
+  
+  /* 🔥 Habit container */
+  .habit-container {
+    display: flex;
+    flex-wrap: wrap;               /* ✅ Cards wrap properly */
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    box-sizing: border-box;
+  }
+  
+  /* 🔥 Habit card styling */
+  .habit-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    transition: transform 0.3s;
+    width: 100%;
+    max-width: 320px;               /* ✅ Consistent card width */
+    min-height: 200px;               /* ✅ Consistent height */
+    text-align: center;
+    word-break: break-word;         /* ✅ Proper text wrapping */
+    white-space: normal;            /* ✅ Prevent vertical stacking */
+    line-height: 1.4;               /* ✅ Improve readability */
+    overflow: hidden;
+  }
+  
+  .habit-card:hover {
+    transform: scale(1.05);
+  }
+  
+  /* 🔥 Text styling */
+  .habit-card h5 {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .habit-card p {
+    font-size: 1rem;
+    color: #666;
+    margin: 10px 0;
+  }
+  
+  /* 🔥 Buttons */
+  .habit-card .btn-group {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    width: 100%;
+  }
+  
+  .habit-card button {
+    flex: 1;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  /* 🔥 Button Colors */
+  .habit-card .btn-primary {
+    background: #28a745;
+    color: white;
+    border: none;
+  }
+  
+  .habit-card .btn-primary:hover {
+    background: #218838;
+  }
+  
+  .habit-card .btn-danger {
+    background: #dc3545;
+    color: white;
+    border: none;
+  }
+  
+  .habit-card .btn-danger:hover {
+    background: #c82333;
+  }
+  
+  /* 🔥 Responsive Design */
+  @media (max-width: 768px) {
+    .habit-card {
+      width: 90%;
+    }
+    .input-group {
+      flex-direction: column;
+      gap: 15px;
+    }
+  }
+  

@@ -1,0 +1,188 @@
+/* Global Styling */
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #f0f0f0, #d1e0e0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Wrapper Centering */
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  padding: 5vw;
+}
+
+/* Main Container */
+.app-container {
+  width: 90%;
+  max-width: 700px;   /* Consistent size for larger screens */
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+}
+
+/* Header Styling */
+h1 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Input Group */
+.input-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+input {
+  padding: 12px;
+  font-size: 1rem;
+  width: calc(70% - 15px);
+  max-width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  padding: 12px 24px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+  background-color: #007bff; 
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+/* Habit Grid */
+.habit-grid {
+  display: grid;
+  grid-template-columns: 1fr;  /* Single column on smaller screens */
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* Habit Card */
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+  background: white;
+  min-height: 180px;
+  text-align: left;
+}
+
+/* Hover Effect */
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Habit Title */
+.card-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Date Styling */
+.card p {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Buttons */
+.card .btn-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+
+.btn-danger {
+  background: #dc3545;
+  color: white;
+}
+
+.btn-success {
+  background: #28a745;
+  color: white;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+/* ✅ Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .app-container {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .input-group {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  input {
+    width: 100%;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .card {
+    padding: 15px;
+  }
+
+  .btn {
+    padding: 8px 15px;
+  }
+}
