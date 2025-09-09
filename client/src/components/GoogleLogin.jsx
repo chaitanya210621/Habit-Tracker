@@ -1,5 +1,5 @@
 import React from "react";
-import { auth, provider, logout } from "../firebaseConfig";  // ✅ Import logout function
+import { auth, provider, logout } from "../firebaseConfig";  // Your Firebase config
 import { signInWithPopup } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import "./GoogleLogin.css";
@@ -11,6 +11,20 @@ const GoogleLogin = ({ setUser }) => {
     try {
       const result = await signInWithPopup(auth, provider);
       setUser(result.user);
+
+      // ✅ Send user info to your Render backend
+      await fetch("https://habit-tracker-cvyd.onrender.com/api/users/google-login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          uid: result.user.uid,
+          email: result.user.email,
+          name: result.user.displayName,
+        }),
+      });
+
       navigate("/");
     } catch (error) {
       console.error("Error signing in:", error);
